@@ -1,0 +1,65 @@
+<?php
+session_start();
+require_once '../models/conexao.php';
+
+if (!isset($_SESSION['id_usuario'])) {
+  header("Location: login.php");
+  exit;
+}
+
+$id_usuario = $_SESSION['id_usuario'];
+$id = $_GET['id'] ?? null;
+
+if (!$id) {
+  header("Location: cadastrar.php");
+  exit;
+}
+
+$sql = "SELECT * FROM cadastrodelivros WHERE id = :id AND id_usuario = :id_usuario";
+$stmt = $conn->prepare($sql);
+$stmt->bindParam(':id', $id);
+$stmt->bindParam(':id_usuario', $id_usuario);
+$stmt->execute();
+$cadastrodelivros = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$cadastrodelivros) {
+  header("Location: cadastrar.php");
+  exit;
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $sql = "DELETE FROM cadastrodelivros WHERE id = :id AND id_usuario = :id_usuario";
+  $stmt = $conn->prepare($sql);
+  $stmt->bindParam(':id', $id);
+  $stmt->bindParam(':id_usuario', $id_usuario);
+  $stmt->execute();
+  header("Location: cadastrar.php");
+  exit;
+}
+?>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Deletar Livro</title>
+ <link rel="stylesheet" href="../public/css/style.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="confirmar">
+   
+      <h2>Deletar Livro</h2>
+      <p>Tem certeza que deseja deletar o livro <strong><?= htmlspecialchars($cadastrodelivros['titulo']) ?></strong>?</p>
+      
+      <form method="POST">
+        <button type="submit" style="background-color: #e74c3c;">🗑️ Deletar</button>
+      </form>
+
+      <p style="margin-top: 10px;"><a class="registro" href="cadastrar.php"> Cancelar e voltar</a></p>
+    </div>
+  </div>
+
+</body>
+</html>

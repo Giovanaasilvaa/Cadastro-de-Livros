@@ -1,0 +1,928 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100..700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url('../../assets/fundo.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "IBM Plex Sans";
+}
+
+.login-box {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    width: 300px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    animation: fadeIn 1s ease-out 0s forwards;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.login-box label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #555;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    transition: all 0.3s ease;
+    transform: scale(1); 
+}
+
+.login-box button:hover {
+    transform: scale(1.05);
+    background-color: #222; 
+}
+
+.login-box button::before {
+    content: "🔒";
+    transition: all 0.2s ease;
+}
+
+.login-box button:active::before {
+    content: "🔓";
+}
+
+
+.login-box button:active {
+    transform: scale(0.98) translateY(2px);
+    background-color: #000; 
+}
+
+.esqueceu {
+    display: block;
+    margin-top: -10%;
+    margin-bottom: 30px;
+    margin-left: -22.5%;
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.esqueceu:hover {
+    text-decoration: underline;
+    transform: scale(1.05) translateX(2px);
+}
+
+.esqueceu:active {
+    transform: scale(1.0) translateX(2px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*olhinho da senha*/
+
+.toggle-senha {
+    position: absolute;
+    right: 10px;
+    top: 40%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.toggle-senha img {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.toggle-senha img:hover {
+    transform: scale(1.2);
+}
+
+/*register*/
+.container-create {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    font-family: "IBM Plex Sans";
+}
+
+
+.login-box-cadastro {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    width: 300px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    animation: fadeIn 1s ease-out 0s forwards;
+    max-width: 1200px;
+}
+
+.login-box-cadastro h2 {
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.login-box-cadastro label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.login-box-cadastro input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #555;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.login-box-cadastro button {
+    width: 100%;
+    padding: 12px;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    transition: all 0.3s ease;
+    transform: scale(1); 
+}
+
+.login-box-cadastro button:hover {
+    transform: scale(1.05);
+    background-color: #222; 
+}
+
+.login-box-cadastro button::before {
+    content: "🔒";
+    transition: all 0.2s ease;
+}
+
+.login-box-cadastro button:active::before {
+    content: "🔓";
+}
+
+
+.login-box-cadastro button:active {
+    transform: scale(0.98) translateY(2px);
+    background-color: #000; 
+}
+
+.senha-regras {
+    list-style: none;
+    padding-left: 0;
+    margin-top: -10%;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    text-align: left;
+    padding-left: 10px;
+}
+  
+.senha-regras li {
+    margin-bottom: 4px;
+}
+
+.container-update{
+    height: 105vh;
+    display: flex;
+    justify-content: center;
+    font-family: "IBM Plex Sans";
+}
+
+label[for="status"] {
+    font-weight: bold;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    color: #333;
+    text-align: left;
+}
+  
+.input-box {
+    width: 100%;
+    margin-bottom: 24px; 
+    position: relative;
+    width: 100%;
+}
+  
+.input-box select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #fff;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+  
+.input-box select:focus {
+    border-color: #ff9e00;
+}
+
+
+.input-box input {
+    width: 100%;
+    padding: 10px 40px 10px 10px; 
+    font-size: 16px;
+    border: 2px solid #444;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+/*"botões de editar e deletar"*/
+.btn-warning{
+    text-decoration: none;
+    color: brown;
+    display: inline-block; 
+    transition: all 0.3s ease;
+    font-family: "IBM Plex Sans";
+}
+
+.btn-warning:hover {
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+
+.btn-warning:active {
+    transform: scale(1.05) translateY(2px);
+}
+
+/*botões de confirmação (sim/deletar)*/
+.confirmar button {
+    width: 50%;
+    padding: 12px;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+ 
+    transition: all 0.3s ease;
+    transform: scale(1); 
+}
+
+.confirmar form {
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+  }
+
+
+.confirmar button:hover {
+    transform: scale(1.05);
+    background-color: #222; 
+}
+
+.confirmar button:active {
+    transform: scale(0.98) translateY(2px);
+    background-color: #000; 
+}
+
+.confirmar{
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    width: 300px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    animation: fadeIn 1s ease-out 0s forwards;
+}
+
+.login-boxEditar{
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    width: 300px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    animation: fadeIn 1s ease-out 0s forwards;
+    height: 650px;
+    margin-top: 40px;
+}
+
+.login-boxEditar h2 {
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.login-boxEditar label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.login-boxEditar input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #555;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.login-boxEditar button {
+    width: 100%;
+    padding: 12px;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+
+    transition: all 0.3s ease;
+    transform: scale(1); 
+}
+
+.login-boxEditar button:hover {
+    transform: scale(1.05);
+    background-color: #222; 
+}
+
+.login-boxEditar button:active {
+    transform: scale(0.98) translateY(2px);
+    background-color: #000; 
+}
+
+.login-boxSenha{
+     background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    width: 300px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    animation: fadeIn 1s ease-out 0s forwards;
+    height: 330px;
+    margin-top: 40px;
+}
+
+.login-boxSenha button {
+    width: 100%;
+    padding: 12px;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    font-family: "IBM Plex Sans";
+    transition: all 0.3s ease;
+    transform: scale(1); 
+}
+
+.login-boxSenha button:hover {
+    transform: scale(1.05);
+    background-color: #222; 
+}
+
+.login-boxSenha button:active {
+    transform: scale(0.98) translateY(2px);
+    background-color: #000; 
+}
+
+.login-boxSenha h2 {
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.login-boxSenha label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.login-boxSenha input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #555;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+
+.login-boxRedefinir{
+     background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    width: 300px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    animation: fadeIn 1s ease-out 0s forwards;
+    
+    margin-top: 40px;
+}
+
+.login-boxRedefinir button {
+    width: 100%;
+    padding: 12px;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+font-family: "IBM Plex Sans";
+    transition: all 0.3s ease;
+    transform: scale(1); 
+}
+
+.login-boxRedefinir button:hover {
+    transform: scale(1.05);
+    background-color: #222; 
+}
+
+.login-boxRedefinir button:active {
+    transform: scale(0.98) translateY(2px);
+    background-color: #000; 
+}
+
+.login-boxRedefinir h1 {
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.login-boxRedefinir label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.login-boxRedefinir input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #555;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+
+/*Perfil*/
+
+.perfil{
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    width: 350px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    animation: fadeIn 1s ease-out 0s forwards;
+}
+
+.perfil p {
+    margin: 12px 0; 
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.perfil strong {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    font-size: 16px;
+}
+
+.form-foto {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+  
+.input-foto {
+    display: none;
+}
+
+.custom-file-label {
+    background-color: brown;;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    
+}
+  
+.custom-file-label:hover {
+    background-color: brown;;
+    transform: scale(1.05) translateY(2px);
+    transition: transform 0.3s ease-in-out;
+}
+  
+.nome-arquivo {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #444;
+}
+  
+.perfil button {
+    width: 100%;
+    padding: 12px;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    transition: all 0.3s ease;
+    transform: scale(1); 
+}
+
+.perfil button:hover {
+    transform: scale(1.05);
+    background-color: #222; 
+}
+
+.perfil button:active {
+    transform: scale(0.98) translateY(2px);
+    background-color: #000; 
+}
+
+.img-perfil {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid #eee;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.registro {
+    display: inline-block;
+    margin-top: 16px;
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.registro:hover {
+    text-decoration: underline;
+    transform: scale(1.05) translateX(2px);
+}
+
+.registro:active {
+    transform: scale(1.0) translateX(2px);
+}
+
+
+
+
+.container__cada {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 1000px;
+    margin: auto;
+    animation: fadeIn 1s ease-out 0s forwards;
+    margin-top: 2%;
+}
+
+.cada_livro {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #343a40;
+}
+
+.cada_info {
+    text-align: center;
+    margin-bottom: 20px;
+    color:  #343a40;
+    text-decoration: underline;
+}
+
+
+.top-links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: auto;
+}
+
+.top-links img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 4px solid #eee;
+    object-fit: cover;
+    margin-bottom: 10px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+
+.btn-success {
+    text-decoration: none;
+    color: brown;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    padding: 25px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 17px;
+}
+
+.btn-success:hover {
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+
+.btn-success:active {
+    transform: scale(1.05) translateY(2px);
+}
+
+.btn-status {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    color: white;
+    transition: 0.2s ease;
+}
+
+.btn-status.lido {
+    background-color: green;
+}
+
+.btn-status.pendente {
+    background-color: #999;
+}
+
+.btn-status:hover {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+}
+
+.btn-status:active {
+    transform: scale(0.97) translateY(1px);
+    box-shadow: none;
+}
+
+.carousel-wrapper {
+    width: 100%;
+    max-width: 900px;
+    height: 280px;
+    margin: 0 auto;
+    overflow-x: hidden; 
+    overflow-y: hidden; 
+    white-space: nowrap; 
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    scroll-behavior: smooth; 
+}
+
+
+.carousel-container {
+    display: inline-flex;
+    gap: 20px;
+    animation: slide 60s linear infinite;
+    width: max-content;
+}
+
+.carousel-container:hover {
+    animation-play-state: paused;
+}
+
+.carousel-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+.item {
+    flex: 0 0 auto;
+    background: #f4f4f4;
+    padding: 10px;
+    border-radius: 8px;
+    width: 160px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+  
+.item:hover {
+    transform: scale(1.03);
+}
+
+.detalhes-livro {
+    max-width: 600px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: none;
+    margin: 20px auto;
+}
+
+.detalhes-livro.ativo {
+    display: block;
+}
+
+
+.btn-warning {
+    text-decoration: none;
+    color: brown;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+
+.btn-warning:active {
+    transform: scale(1.05) translateY(2px);
+}
+
+.capa-livro {
+    width: 140px;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+@keyframes slide {
+    from {
+      transform: translateX(0);
+    } to {
+      transform: translateX(-100%);
+    }
+}
+
+.rating {
+    user-select: none;
+    font-size: 20px;
+    display: inline-block;
+}
+
+.rating .star {
+    cursor: pointer;
+    transition: transform 0.15s;
+    display: inline-block;
+    color: #ccc; 
+}
+
+.rating .star:hover,
+.rating .star:hover ~ .star {   
+    color: gold;
+}
+
+.rating .star.filled {
+color: gold;
+}
+
+.rating .star:active {
+    transform: scale(0.9);
+}
+
+/*wish*/
+
+.table_cada {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+  
+.table_cada thead {
+    background-color: #e08c37;
+    color: #fff;
+    text-align: left;
+}
+  
+.table_cada th, .table_cada td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+  
+.table_cada tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+  
+.table_cada tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
